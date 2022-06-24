@@ -3,7 +3,7 @@ import kotlinx.coroutines.*
 suspend fun main() = coroutineScope {
     repeat(3) {
         launch {
-            val s = Main().hello("from Java", 4)
+            val s = Main().hello("from Kotlin", 4)
             println(s)
         }
     }
@@ -11,7 +11,7 @@ suspend fun main() = coroutineScope {
 
 class Main {
     init {
-        System.load("/Users/philipwedemann/Downloads/kotlinJni/libhello.o")
+        System.loadLibrary("helloc")
     }
 
     external fun hello(from: String, repeat: Int): Int
