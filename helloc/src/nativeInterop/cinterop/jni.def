@@ -2,4 +2,5 @@ headers = jni.h
 headerFilter = *
 package = jni
 
-compilerOpts.osx = -I/Users/philipwedemann/Library/Java/JavaVirtualMachines/azul-17.0.3/Contents/Home/include -I/Users/philipwedemann/Library/Java/JavaVirtualMachines/azul-17.0.3/Contents/Home/include/darwin
+compilerOpts = -I/Users/philipwedemann/Library/Java/JavaVirtualMachines/azul-17.0.3/Contents/Home/include -I/Users/philipwedemann/Library/Java/JavaVirtualMachines/azul-17.0.3/Contents/Home/include/darwin
+compilerOpts.linux = -IC:/msys64/amazon-corretto-17.0.3.6.1-linux-x64/include -IC:/msys64/amazon-corretto-17.0.3.6.1-linux-x64/include/linux
