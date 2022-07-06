@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gradle/wrapper-validation-action@v1
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+      - name: Build with Gradle
+        run: ./gradlew build
+      - run: java -Djava.library.path=helloc/build/bin/linuxX64/releaseShared -jar build/libs/kotlinJni.jar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: jar
+          path: build/libs/kotlinJni.jar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: lib
+          path: helloc/build/bin/linuxX64/releaseShared
