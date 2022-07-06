@@ -20,3 +20,11 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
       - run: java -Djava.library.path=helloc/build/bin/linuxX64/releaseShared -jar build/libs/kotlinJni.jar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: jar
+          path: build/libs/kotlinJni.jar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: lib
+          path: helloc/build/bin/linuxX64/releaseShared
