@@ -6,5 +6,6 @@ JNIEXPORT int JNICALL Java_Main_hello(JNIEnv *env, jobject obj, jstring from, ji
     for(int x = 0; x < repeat; x++) {
       printf("Hello World from JNI: %s\n", f);
     }
+  (*env)->ReleaseStringUTFChars(env, from, f);
   return repeat;
 }
