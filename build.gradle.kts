@@ -8,10 +8,6 @@ allprojects {
     }
 }
 
-dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3")
-}
-
 tasks {
     withType<JavaCompile> {
         sourceCompatibility = "1.8"
