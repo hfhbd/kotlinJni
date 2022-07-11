@@ -1,7 +1,14 @@
 package sample
 
-fun main() {
-    Main().hello("Hello from Kotlin")
+import kotlinx.coroutines.*
+
+suspend fun main() = coroutineScope {
+    repeat(3) {
+        launch {
+            val s = Main().hello("from Kotlin", 4)
+            println("$it $s")
+        }
+    }
 }
 
 class Main {
@@ -9,5 +16,5 @@ class Main {
         System.loadLibrary("helloc")
     }
 
-    external fun hello(from: String)
+    external fun hello(from: String, repeat: Int): Int
 }
