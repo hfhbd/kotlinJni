@@ -4,10 +4,6 @@ plugins {
     kotlin("multiplatform")
 }
 
-repositories {
-    mavenCentral()
-}
-
 kotlin {
     fun KotlinNativeTarget.config() {
         binaries.sharedLib()
