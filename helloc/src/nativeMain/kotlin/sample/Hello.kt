@@ -3,7 +3,7 @@ package sample
 import jni.*
 import kotlinx.cinterop.*
 
-@CName("Java_Main_hello")
+@CName("Java_sample_Main_hello")
 fun hello(env: JNIEnv, obj: jobject, from: jstring) {
     val getStringUTFChars = requireNotNull(env.pointed.GetStringUTFChars) {
         "GET FAILED"

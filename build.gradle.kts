@@ -17,7 +17,7 @@ tasks {
         kotlinOptions.jvmTarget = "1.8"
     }
     jar {
-        manifest.attributes["Main-Class"] = "MainKt"
+        manifest.attributes["Main-Class"] = "sample.MainKt"
         duplicatesStrategy = DuplicatesStrategy.EXCLUDE
         from(configurations.runtimeClasspath.get().map {
             if (it.isDirectory) it else zipTree(it)

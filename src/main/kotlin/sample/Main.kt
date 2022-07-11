@@ -1,3 +1,5 @@
+package sample
+
 fun main() {
     Main().hello("Hello from Kotlin")
 }
