@@ -21,4 +21,17 @@ kotlin {
         config()
     }
     macosArm64 { config() }
+    jvm()
+
+    sourceSets {
+        val nativeMain by creating {
+            dependsOn(commonMain.get())
+        }
+        val linuxX64Main by getting {
+            dependsOn(nativeMain)
+        }
+        val macosArm64Main by getting {
+            dependsOn(nativeMain)
+        }
+    }
 }
