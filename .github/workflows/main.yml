@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: 'adopt'
-          java-version: 8
+          java-version: 17
       - name: Build with Gradle
         run: ./gradlew build
       - run: java -Djava.library.path=helloc/build/bin/linuxX64/releaseShared -jar build/libs/kotlinJni.jar
