@@ -1,10 +1,16 @@
 plugins {
     kotlin("jvm") version "1.7.10"
+    id("app.cash.licensee") version "1.5.0"
 }
 
 allprojects {
     repositories {
         mavenCentral()
+    }
+
+    plugins.apply("app.cash.licensee")
+    licensee {
+        allow("Apache-2.0")
     }
 }
 
