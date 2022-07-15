@@ -1,3 +1,10 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
 rootProject.name = "kotlinJni"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
