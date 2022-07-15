@@ -10,9 +10,9 @@ fun hello(env: CPointer<JNIEnvVar>, obj: jobject, from: jstring, repeat: jint): 
 }
 
 private fun CPointer<JNIEnvVar>.getString(string: jstring): String {
-    val getStringUTFChars = pointed.pointed!!.GetStringUTFChars!!
-    val cString = getStringUTFChars(reinterpret(), string, null)!!
+    val getStringChars = pointed.pointed!!.GetStringChars!!
+    val cString = getStringChars(reinterpret(), string, null)!!
     val kString = cString.toKString()
-    pointed.pointed!!.ReleaseStringUTFChars!!(reinterpret(), string, cString)
+    pointed.pointed!!.ReleaseStringChars!!(reinterpret(), string, cString)
     return kString
 }
