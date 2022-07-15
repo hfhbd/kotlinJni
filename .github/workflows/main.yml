@@ -28,3 +28,5 @@ jobs:
         with:
           name: lib
           path: helloc/build/bin/linuxX64/releaseShared
+      - run: gcc helloc/hello.c -o libhello.so -fPIC -I ${JAVA_HOME}/include -I ${JAVA_HOME}/include/linux
+      - run: java -Djava.library.path=. -jar build/libs/kotlinJni.jar
