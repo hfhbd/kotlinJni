@@ -17,7 +17,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: 17
-      - run: ls /opt/hostedtoolcache/Java_Adopt_jdk/17.0.4-8/x64
+      - run: ls /opt/hostedtoolcache/Java_Adopt_jdk/17.0.4-8/x64/include
       - name: Build with Gradle
         run: ./gradlew build
       - run: java -Djava.library.path=helloc/build/bin/linuxX64/releaseShared -jar build/libs/kotlinJni.jar
